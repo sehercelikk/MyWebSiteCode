@@ -1,0 +1,1336 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AE26632-D0C4-46F4-B802-4F83AA2ED30E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSite</RootNamespace>
+    <AssemblyName>WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44371</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeKit, Version=4.13.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.4.13.0\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.1\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminSablon\css\style.css" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Bold.html" />
+    <Content Include="AdminSablon\images\auth\lockscreen-bg.jpg" />
+    <Content Include="AdminSablon\images\auth\login-bg.jpg" />
+    <Content Include="AdminSablon\images\auth\register-bg.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_1.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_10.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_11.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_12.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_2.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_3.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_4.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_5.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_6.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_7.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_8.jpg" />
+    <Content Include="AdminSablon\images\carousel\banner_9.jpg" />
+    <Content Include="AdminSablon\images\faces\face1.jpg" />
+    <Content Include="AdminSablon\images\faces\face10.jpg" />
+    <Content Include="AdminSablon\images\faces\face11.html" />
+    <Content Include="AdminSablon\images\faces\face12.jpg" />
+    <Content Include="AdminSablon\images\faces\face13.jpg" />
+    <Content Include="AdminSablon\images\faces\face16.jpg" />
+    <Content Include="AdminSablon\images\faces\face19.html" />
+    <Content Include="AdminSablon\images\faces\face2.jpg" />
+    <Content Include="AdminSablon\images\faces\face20.jpg" />
+    <Content Include="AdminSablon\images\faces\face21.jpg" />
+    <Content Include="AdminSablon\images\faces\face23.jpg" />
+    <Content Include="AdminSablon\images\faces\face3.jpg" />
+    <Content Include="AdminSablon\images\faces\face4.jpg" />
+    <Content Include="AdminSablon\images\faces\face5.jpg" />
+    <Content Include="AdminSablon\images\faces\face6.jpg" />
+    <Content Include="AdminSablon\images\faces\face7.jpg" />
+    <Content Include="AdminSablon\images\faces\face8.jpg" />
+    <Content Include="AdminSablon\images\faces\face9.jpg" />
+    <Content Include="AdminSablon\images\favicon.png" />
+    <Content Include="AdminSablon\images\lightbox\play-button.png" />
+    <Content Include="AdminSablon\images\lightbox\thumb-v-v-1.jpg" />
+    <Content Include="AdminSablon\images\lightbox\thumb-v-v-2.jpg" />
+    <Content Include="AdminSablon\images\lightbox\thumb-v-y-1.jpg" />
+    <Content Include="AdminSablon\images\lightbox\thumb-v-y-2.jpg" />
+    <Content Include="AdminSablon\images\logo-mini.svg" />
+    <Content Include="AdminSablon\images\logo.svg" />
+    <Content Include="AdminSablon\images\samples\1280x768\1.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\10.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\11.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\12.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\2.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\3.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\4.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\5.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\6.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\7.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\8.jpg" />
+    <Content Include="AdminSablon\images\samples\1280x768\9.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\1.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\10.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\11.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\12.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\13.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\14.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\15.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\2.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\3.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\4.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\5.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\6.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\7.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\8.jpg" />
+    <Content Include="AdminSablon\images\samples\300x300\9.jpg" />
+    <Content Include="AdminSablon\images\sprites\jsgrid-icons.png" />
+    <Content Include="AdminSablon\index-2.html" />
+    <Content Include="AdminSablon\index.html" />
+    <Content Include="AdminSablon\js\alerts.js" />
+    <Content Include="AdminSablon\js\avgrund.js" />
+    <Content Include="AdminSablon\js\bt-maxLength.js" />
+    <Content Include="AdminSablon\js\c3.js" />
+    <Content Include="AdminSablon\js\calendar.js" />
+    <Content Include="AdminSablon\js\chart.js" />
+    <Content Include="AdminSablon\js\chartist.js" />
+    <Content Include="AdminSablon\js\clipboard.js" />
+    <Content Include="AdminSablon\js\codeEditor.js" />
+    <Content Include="AdminSablon\js\context-menu.js" />
+    <Content Include="AdminSablon\js\dashboard.js" />
+    <Content Include="AdminSablon\js\data-table.js" />
+    <Content Include="AdminSablon\js\db.js" />
+    <Content Include="AdminSablon\js\desktop-notification.js" />
+    <Content Include="AdminSablon\js\dragula.js" />
+    <Content Include="AdminSablon\js\dropify.js" />
+    <Content Include="AdminSablon\js\dropzone.js" />
+    <Content Include="AdminSablon\js\editorDemo.js" />
+    <Content Include="AdminSablon\js\file-upload.js" />
+    <Content Include="AdminSablon\js\flot-chart.js" />
+    <Content Include="AdminSablon\js\form-addons.js" />
+    <Content Include="AdminSablon\js\form-repeater.js" />
+    <Content Include="AdminSablon\js\form-validation.js" />
+    <Content Include="AdminSablon\js\formpickers.js" />
+    <Content Include="AdminSablon\js\google-charts.js" />
+    <Content Include="AdminSablon\js\google-maps.js" />
+    <Content Include="AdminSablon\js\hoverable-collapse.js" />
+    <Content Include="AdminSablon\js\ion-range-slider.js" />
+    <Content Include="AdminSablon\js\jq.tablesort.js" />
+    <Content Include="AdminSablon\js\jquery-file-upload.js" />
+    <Content Include="AdminSablon\js\js-grid.js" />
+    <Content Include="AdminSablon\js\just-gage.js" />
+    <Content Include="AdminSablon\js\light-gallery.js" />
+    <Content Include="AdminSablon\js\mapeal.js" />
+    <Content Include="AdminSablon\js\mapeal_example_1.js" />
+    <Content Include="AdminSablon\js\mapeal_example_2.js" />
+    <Content Include="AdminSablon\js\maps.js" />
+    <Content Include="AdminSablon\js\misc.js" />
+    <Content Include="AdminSablon\js\modal-demo.js" />
+    <Content Include="AdminSablon\js\morris.js" />
+    <Content Include="AdminSablon\js\no-ui-slider.js" />
+    <Content Include="AdminSablon\js\off-canvas.js" />
+    <Content Include="AdminSablon\js\owl-carousel.js" />
+    <Content Include="AdminSablon\js\paginate.js" />
+    <Content Include="AdminSablon\js\popover.js" />
+    <Content Include="AdminSablon\js\profile-demo.js" />
+    <Content Include="AdminSablon\js\progress-bar.js" />
+    <Content Include="AdminSablon\js\select2.js" />
+    <Content Include="AdminSablon\js\settings.js" />
+    <Content Include="AdminSablon\js\sparkline.js" />
+    <Content Include="AdminSablon\js\tablesorter.js" />
+    <Content Include="AdminSablon\js\tabs.js" />
+    <Content Include="AdminSablon\js\tight-grid.js" />
+    <Content Include="AdminSablon\js\toastDemo.js" />
+    <Content Include="AdminSablon\js\todolist.js" />
+    <Content Include="AdminSablon\js\tooltips.js" />
+    <Content Include="AdminSablon\js\typeahead.js" />
+    <Content Include="AdminSablon\js\wizard.js" />
+    <Content Include="AdminSablon\js\x-editable.js" />
+    <Content Include="AdminSablon\pages\apps\calendar.html" />
+    <Content Include="AdminSablon\pages\apps\email.html" />
+    <Content Include="AdminSablon\pages\apps\gallery.html" />
+    <Content Include="AdminSablon\pages\apps\todo.html" />
+    <Content Include="AdminSablon\pages\charts\c3.html" />
+    <Content Include="AdminSablon\pages\charts\chartist.html" />
+    <Content Include="AdminSablon\pages\charts\chartjs.html" />
+    <Content Include="AdminSablon\pages\charts\flot-chart.html" />
+    <Content Include="AdminSablon\pages\charts\google-charts.html" />
+    <Content Include="AdminSablon\pages\charts\justGage.html" />
+    <Content Include="AdminSablon\pages\charts\morris.html" />
+    <Content Include="AdminSablon\pages\charts\sparkline.html" />
+    <Content Include="AdminSablon\pages\documentation.html" />
+    <Content Include="AdminSablon\pages\forms\advanced_elements.html" />
+    <Content Include="AdminSablon\pages\forms\basic_elements.html" />
+    <Content Include="AdminSablon\pages\forms\code_editor.html" />
+    <Content Include="AdminSablon\pages\forms\dropify.html" />
+    <Content Include="AdminSablon\pages\forms\text_editor.html" />
+    <Content Include="AdminSablon\pages\forms\validation.html" />
+    <Content Include="AdminSablon\pages\forms\wizard.html" />
+    <Content Include="AdminSablon\pages\icons\flag-icons.html" />
+    <Content Include="AdminSablon\pages\icons\font-awesome.html" />
+    <Content Include="AdminSablon\pages\icons\simple-line-icon.html" />
+    <Content Include="AdminSablon\pages\icons\themify.html" />
+    <Content Include="AdminSablon\pages\layout\boxed-layout.html" />
+    <Content Include="AdminSablon\pages\layout\compact-menu.html" />
+    <Content Include="AdminSablon\pages\layout\horizontal-menu.html" />
+    <Content Include="AdminSablon\pages\layout\rtl-layout.html" />
+    <Content Include="AdminSablon\pages\layout\sidebar-collapsed.html" />
+    <Content Include="AdminSablon\pages\layout\sidebar-fixed.html" />
+    <Content Include="AdminSablon\pages\layout\sidebar-hidden-overlay.html" />
+    <Content Include="AdminSablon\pages\layout\sidebar-hidden.html" />
+    <Content Include="AdminSablon\pages\maps\google-maps.html" />
+    <Content Include="AdminSablon\pages\maps\mapeal.html" />
+    <Content Include="AdminSablon\pages\maps\vector-map.html" />
+    <Content Include="AdminSablon\pages\samples\blank-page.html" />
+    <Content Include="AdminSablon\pages\samples\error-404.html" />
+    <Content Include="AdminSablon\pages\samples\error-500.html" />
+    <Content Include="AdminSablon\pages\samples\faq-2.html" />
+    <Content Include="AdminSablon\pages\samples\faq.html" />
+    <Content Include="AdminSablon\pages\samples\invoice.html" />
+    <Content Include="AdminSablon\pages\samples\lock-screen.html" />
+    <Content Include="AdminSablon\pages\samples\login-2.html" />
+    <Content Include="AdminSablon\pages\samples\login.html" />
+    <Content Include="AdminSablon\pages\samples\news-grid.html" />
+    <Content Include="AdminSablon\pages\samples\orders.html" />
+    <Content Include="AdminSablon\pages\samples\portfolio.html" />
+    <Content Include="AdminSablon\pages\samples\pricing-table.html" />
+    <Content Include="AdminSablon\pages\samples\profile.html" />
+    <Content Include="AdminSablon\pages\samples\register-2.html" />
+    <Content Include="AdminSablon\pages\samples\register.html" />
+    <Content Include="AdminSablon\pages\samples\search-results.html" />
+    <Content Include="AdminSablon\pages\samples\timeline.html" />
+    <Content Include="AdminSablon\pages\tables\basic-table.html" />
+    <Content Include="AdminSablon\pages\tables\data-table.html" />
+    <Content Include="AdminSablon\pages\tables\js-grid.html" />
+    <Content Include="AdminSablon\pages\tables\sortable-table.html" />
+    <Content Include="AdminSablon\pages\ui-features\accordions.html" />
+    <Content Include="AdminSablon\pages\ui-features\badges.html" />
+    <Content Include="AdminSablon\pages\ui-features\breadcrumbs.html" />
+    <Content Include="AdminSablon\pages\ui-features\buttons.html" />
+    <Content Include="AdminSablon\pages\ui-features\carousel.html" />
+    <Content Include="AdminSablon\pages\ui-features\clipboard.html" />
+    <Content Include="AdminSablon\pages\ui-features\colcade.html" />
+    <Content Include="AdminSablon\pages\ui-features\context-menu.html" />
+    <Content Include="AdminSablon\pages\ui-features\dragula.html" />
+    <Content Include="AdminSablon\pages\ui-features\dropdowns.html" />
+    <Content Include="AdminSablon\pages\ui-features\loaders.html" />
+    <Content Include="AdminSablon\pages\ui-features\modals.html" />
+    <Content Include="AdminSablon\pages\ui-features\notifications.html" />
+    <Content Include="AdminSablon\pages\ui-features\pagination.html" />
+    <Content Include="AdminSablon\pages\ui-features\popups.html" />
+    <Content Include="AdminSablon\pages\ui-features\progress.html" />
+    <Content Include="AdminSablon\pages\ui-features\slider.html" />
+    <Content Include="AdminSablon\pages\ui-features\tabs.html" />
+    <Content Include="AdminSablon\pages\ui-features\tooltips.html" />
+    <Content Include="AdminSablon\pages\ui-features\typography.html" />
+    <Content Include="AdminSablon\pages\widgets.html" />
+    <Content Include="AdminSablon\vendors\ace-builds\src-min\ace.js" />
+    <Content Include="AdminSablon\vendors\css\vendor.bundle.addons.css" />
+    <Content Include="AdminSablon\vendors\css\vendor.bundle.base.css" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\css\flag-icon.min.css" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ad.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ae.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\af.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ag.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ai.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\al.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\am.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ao.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\aq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ar.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\as.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\at.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\au.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\aw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ax.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\az.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ba.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\be.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\br.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bs.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\by.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\bz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ca.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ch.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ci.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ck.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\co.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cx.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\cz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\de.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\dj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\dk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\dm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\do.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\dz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ec.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ee.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\eg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\eh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\er.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\es-ct.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\es.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\et.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\eu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\fi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\fj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\fk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\fm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\fo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\fr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ga.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gb-eng.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gb-nir.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gb-sct.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gb-wls.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ge.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gs.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\gy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\hk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\hm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\hn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\hr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ht.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\hu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\id.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ie.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\il.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\im.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\in.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\io.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\iq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ir.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\is.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\it.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\je.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\jm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\jo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\jp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ke.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\kg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\kh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ki.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\km.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\kn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\kp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\kr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\kw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ky.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\kz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\la.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\lb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\lc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\li.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\lk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\lr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ls.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\lt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\lu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\lv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ly.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ma.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\md.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\me.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ml.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ms.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mx.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\my.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\mz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\na.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\nc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ne.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\nf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ng.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ni.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\nl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\no.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\np.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\nr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\nu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\nz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\om.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pa.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pe.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ph.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ps.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\pw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\py.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\qa.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\re.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ro.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\rs.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ru.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\rw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sa.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\se.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sh.html" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\si.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\so.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ss.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\st.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sx.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\sz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\td.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\th.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\to.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\tz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ua.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ug.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\um.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\un.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\us.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\uy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\uz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\va.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\vc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ve.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\vg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\vi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\vn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\vu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\wf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ws.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\ye.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\yt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\za.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\zm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\1x1\zw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ad.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ae.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\af.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ag.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ai.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\al.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\am.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ao.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\aq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ar.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\as.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\at.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\au.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\aw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ax.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\az.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ba.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\be.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\br.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bs.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\by.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\bz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ca.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ch.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ci.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ck.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\co.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cx.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\cz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\de.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\dj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\dk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\dm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\do.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\dz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ec.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ee.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\eg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\eh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\er.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\es-ct.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\es.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\et.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\eu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\fi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\fj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\fk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\fm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\fo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\fr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ga.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gb-eng.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gb-nir.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gb-sct.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gb-wls.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ge.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gs.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\gy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\hk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\hm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\hn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\hr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ht.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\hu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\id.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ie.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\il.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\im.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\in.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\io.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\iq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ir.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\is.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\it.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\je.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\jm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\jo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\jp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ke.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\kg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\kh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ki.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\km.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\kn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\kp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\kr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\kw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ky.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\kz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\la.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\lb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\lc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\li.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\lk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\lr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ls.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\lt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\lu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\lv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ly.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ma.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\md.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\me.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ml.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mo.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mp.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mq.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ms.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mx.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\my.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\mz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\na.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\nc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ne.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\nf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ng.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ni.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\nl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\no.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\np.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\nr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\nu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\nz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\om.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pa.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pe.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ph.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ps.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\pw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\py.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\qa.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\re.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ro.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\rs.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ru.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\rw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sa.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sb.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sd.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\se.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sh.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\si.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\so.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ss.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\st.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sx.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\sz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\td.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\th.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tj.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tk.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tl.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\to.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tr.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tv.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\tz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ua.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ug.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\um.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\un.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\us.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\uy.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\uz.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\va.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\vc.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ve.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\vg.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\vi.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\vn.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\vu.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\wf.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ws.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\ye.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\yt.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\za.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\zm.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\flag-icon-css\flags\4x3\zw.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\css\all.min.css" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-brands-400.html" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-regular-400.html" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-solid-900.html" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\simple-line-icon\css\simple-line-icons.css" />
+    <Content Include="AdminSablon\vendors\iconfonts\simple-line-icon\fonts\Simple-Line-Iconsb26c.html" />
+    <Content Include="AdminSablon\vendors\iconfonts\simple-line-icon\fonts\Simple-Line-Iconsb26c.svg" />
+    <Content Include="AdminSablon\vendors\iconfonts\ti-icons\css\themify-icons.css" />
+    <Content Include="AdminSablon\vendors\iconfonts\ti-icons\fonts\themify.svg" />
+    <Content Include="AdminSablon\vendors\images\alpha.png" />
+    <Content Include="AdminSablon\vendors\images\hue.png" />
+    <Content Include="AdminSablon\vendors\images\saturation.png" />
+    <Content Include="AdminSablon\vendors\images\transparent.png" />
+    <Content Include="AdminSablon\vendors\img\sprite-skin-flat.png" />
+    <Content Include="AdminSablon\vendors\js\vendor.bundle.addons.js" />
+    <Content Include="AdminSablon\vendors\js\vendor.bundle.base.js" />
+    <Content Include="AdminSablon\vendors\lightgallery\css\lightgallery.css" />
+    <Content Include="AdminSablon\vendors\lightgallery\fonts\lgd641.svg" />
+    <Content Include="AdminSablon\vendors\lightgallery\img\loading.gif" />
+    <Content Include="AdminSablon\vendors\lightgallery\img\video-play.png" />
+    <Content Include="AdminSablon\vendors\lightgallery\img\vimeo-play.png" />
+    <Content Include="AdminSablon\vendors\lightgallery\img\youtube-play.png" />
+    <Content Include="AdminSablon\vendors\lightgallery\js\lightgallery-all.min.js" />
+    <Content Include="AdminSablon\vendors\summernote\dist\summernote-bs4.css" />
+    <Content Include="AdminSablon\vendors\summernote\dist\summernote-bs4.min.js" />
+    <Content Include="AdminSablon\vendors\tinymce\themes\modern\theme.js" />
+    <Content Include="AdminSablon\vendors\tinymce\tinymce.min.js" />
+    <Content Include="Beceri.aspx" />
+    <Content Include="BeceriEkle.aspx" />
+    <Content Include="BeceriGuncelle.aspx" />
+    <Content Include="BeceriSil.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Deneyim.aspx" />
+    <Content Include="DeneyimEkle.aspx" />
+    <Content Include="DeneyimGuncelle.aspx" />
+    <Content Include="DeneyimSil.aspx" />
+    <Content Include="Egitim.aspx" />
+    <Content Include="EgitimEkle.aspx" />
+    <Content Include="EgitimGuncelle.aspx" />
+    <Content Include="EgitimSil.aspx" />
+    <Content Include="Giris.css" />
+    <Content Include="GorevTanim.aspx" />
+    <Content Include="GorevTanimEkle.aspx" />
+    <Content Include="GorevTanimGuncelle.aspx" />
+    <Content Include="GorevTanimSil.aspx" />
+    <Content Include="Hakkimda.aspx" />
+    <Content Include="Hobi.aspx" />
+    <Content Include="HobiEkle.aspx" />
+    <Content Include="HobiGuncelle.aspx" />
+    <Content Include="HobiSil.aspx" />
+    <Content Include="Iletisim.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Proje.aspx" />
+    <Content Include="ProjeEkle.aspx" />
+    <Content Include="ProjeGuncelle.aspx" />
+    <Content Include="ProjeSil.aspx" />
+    <Content Include="Sablon\assets\css\main.css" />
+    <Content Include="Sablon\assets\img\apple-touch-icon.png" />
+    <Content Include="Sablon\assets\img\favicon.png" />
+    <Content Include="Sablon\assets\js\main.js" />
+    <Content Include="Sablon\assets\scss\Readme.txt" />
+    <Content Include="Sablon\assets\vendor\aos\aos.cjs.js" />
+    <Content Include="Sablon\assets\vendor\aos\aos.css" />
+    <Content Include="Sablon\assets\vendor\aos\aos.esm.js" />
+    <Content Include="Sablon\assets\vendor\aos\aos.js" />
+    <Content Include="Sablon\assets\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap-icons\bootstrap-icons.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Sablon\assets\vendor\glightbox\css\glightbox.css" />
+    <Content Include="Sablon\assets\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Sablon\assets\vendor\glightbox\js\glightbox.js" />
+    <Content Include="Sablon\assets\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Sablon\assets\vendor\imagesloaded\imagesloaded.pkgd.min.js" />
+    <Content Include="Sablon\assets\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Sablon\assets\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Sablon\assets\vendor\php-email-form\validate.js" />
+    <Content Include="Sablon\assets\vendor\purecounter\purecounter_vanilla.js" />
+    <Content Include="Sablon\assets\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Sablon\assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="Sablon\assets\vendor\typed.js\typed.cjs" />
+    <Content Include="Sablon\assets\vendor\typed.js\typed.module.js" />
+    <Content Include="Sablon\assets\vendor\typed.js\typed.umd.js" />
+    <Content Include="Sablon\assets\vendor\waypoints\noframework.waypoints.js" />
+    <Content Include="Sablon\forms\Readme.txt" />
+    <Content Include="Sablon\index.html" />
+    <Content Include="Sablon\portfolio-details.html" />
+    <Content Include="Sablon\Readme.txt" />
+    <Content Include="Sablon\service-details.html" />
+    <Content Include="Sablon\starter-page.html" />
+    <Content Include="Sertifika.aspx" />
+    <Content Include="SertifikaEkle.aspx" />
+    <Content Include="SertifikaGuncelle.aspx" />
+    <Content Include="SertifikaSil.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="Beceri.aspx.cs">
+      <DependentUpon>Beceri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Beceri.aspx.designer.cs">
+      <DependentUpon>Beceri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeceriEkle.aspx.cs">
+      <DependentUpon>BeceriEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeceriEkle.aspx.designer.cs">
+      <DependentUpon>BeceriEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeceriGuncelle.aspx.cs">
+      <DependentUpon>BeceriGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeceriGuncelle.aspx.designer.cs">
+      <DependentUpon>BeceriGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeceriSil.aspx.cs">
+      <DependentUpon>BeceriSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeceriSil.aspx.designer.cs">
+      <DependentUpon>BeceriSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Deneyim.aspx.cs">
+      <DependentUpon>Deneyim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Deneyim.aspx.designer.cs">
+      <DependentUpon>Deneyim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeneyimEkle.aspx.cs">
+      <DependentUpon>DeneyimEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeneyimEkle.aspx.designer.cs">
+      <DependentUpon>DeneyimEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeneyimGuncelle.aspx.cs">
+      <DependentUpon>DeneyimGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeneyimGuncelle.aspx.designer.cs">
+      <DependentUpon>DeneyimGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeneyimSil.aspx.cs">
+      <DependentUpon>DeneyimSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeneyimSil.aspx.designer.cs">
+      <DependentUpon>DeneyimSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Egitim.aspx.cs">
+      <DependentUpon>Egitim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Egitim.aspx.designer.cs">
+      <DependentUpon>Egitim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EgitimEkle.aspx.cs">
+      <DependentUpon>EgitimEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EgitimEkle.aspx.designer.cs">
+      <DependentUpon>EgitimEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EgitimGuncelle.aspx.cs">
+      <DependentUpon>EgitimGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EgitimGuncelle.aspx.designer.cs">
+      <DependentUpon>EgitimGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EgitimSil.aspx.cs">
+      <DependentUpon>EgitimSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EgitimSil.aspx.designer.cs">
+      <DependentUpon>EgitimSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GorevTanim.aspx.cs">
+      <DependentUpon>GorevTanim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GorevTanim.aspx.designer.cs">
+      <DependentUpon>GorevTanim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GorevTanimEkle.aspx.cs">
+      <DependentUpon>GorevTanimEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GorevTanimEkle.aspx.designer.cs">
+      <DependentUpon>GorevTanimEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GorevTanimGuncelle.aspx.cs">
+      <DependentUpon>GorevTanimGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GorevTanimGuncelle.aspx.designer.cs">
+      <DependentUpon>GorevTanimGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GorevTanimSil.aspx.cs">
+      <DependentUpon>GorevTanimSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GorevTanimSil.aspx.designer.cs">
+      <DependentUpon>GorevTanimSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hakkimda.aspx.cs">
+      <DependentUpon>Hakkimda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hakkimda.aspx.designer.cs">
+      <DependentUpon>Hakkimda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hobi.aspx.cs">
+      <DependentUpon>Hobi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hobi.aspx.designer.cs">
+      <DependentUpon>Hobi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HobiEkle.aspx.cs">
+      <DependentUpon>HobiEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HobiEkle.aspx.designer.cs">
+      <DependentUpon>HobiEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HobiGuncelle.aspx.cs">
+      <DependentUpon>HobiGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HobiGuncelle.aspx.designer.cs">
+      <DependentUpon>HobiGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HobiSil.aspx.cs">
+      <DependentUpon>HobiSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HobiSil.aspx.designer.cs">
+      <DependentUpon>HobiSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Iletisim.aspx.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Iletisim.aspx.designer.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Proje.aspx.cs">
+      <DependentUpon>Proje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proje.aspx.designer.cs">
+      <DependentUpon>Proje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeEkle.aspx.cs">
+      <DependentUpon>ProjeEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjeEkle.aspx.designer.cs">
+      <DependentUpon>ProjeEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeGuncelle.aspx.cs">
+      <DependentUpon>ProjeGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjeGuncelle.aspx.designer.cs">
+      <DependentUpon>ProjeGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeSil.aspx.cs">
+      <DependentUpon>ProjeSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjeSil.aspx.designer.cs">
+      <DependentUpon>ProjeSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sertifika.aspx.cs">
+      <DependentUpon>Sertifika.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sertifika.aspx.designer.cs">
+      <DependentUpon>Sertifika.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SertifikaEkle.aspx.cs">
+      <DependentUpon>SertifikaEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SertifikaEkle.aspx.designer.cs">
+      <DependentUpon>SertifikaEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SertifikaGuncelle.aspx.cs">
+      <DependentUpon>SertifikaGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SertifikaGuncelle.aspx.designer.cs">
+      <DependentUpon>SertifikaGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SertifikaSil.aspx.cs">
+      <DependentUpon>SertifikaSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SertifikaSil.aspx.designer.cs">
+      <DependentUpon>SertifikaSil.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin.master" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Bold.eot" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Bold.ttf" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Bold.woff" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Boldd41d.eot" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Regular.eot" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Regular.ttf" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Regular.woff" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Regular.woff2" />
+    <Content Include="AdminSablon\fonts\PT_Sans\PTSans-Regulard41d.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="AdminSablon\vendors\iconfonts\font-awesome\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\simple-line-icon\fonts\Simple-Line-Iconsb26c.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\simple-line-icon\fonts\Simple-Line-Iconsb26c.ttf" />
+    <Content Include="AdminSablon\vendors\iconfonts\simple-line-icon\fonts\Simple-Line-Iconsb26c.woff" />
+    <Content Include="AdminSablon\vendors\iconfonts\ti-icons\fonts\themify.eot" />
+    <Content Include="AdminSablon\vendors\iconfonts\ti-icons\fonts\themify.ttf" />
+    <Content Include="AdminSablon\vendors\iconfonts\ti-icons\fonts\themify.woff" />
+    <Content Include="AdminSablon\vendors\iconfonts\ti-icons\fonts\themifyd41d.eot" />
+    <Content Include="AdminSablon\vendors\lightgallery\fonts\lgd41d.eot" />
+    <Content Include="AdminSablon\vendors\lightgallery\fonts\lgd641.eot" />
+    <Content Include="AdminSablon\vendors\lightgallery\fonts\lgd641.ttf" />
+    <Content Include="AdminSablon\vendors\lightgallery\fonts\lgd641.woff" />
+    <Content Include="AdminSablon\vendors\summernote\dist\font\summernote291f.eot" />
+    <Content Include="AdminSablon\vendors\summernote\dist\font\summernote291f.ttf" />
+    <Content Include="AdminSablon\vendors\summernote\dist\font\summernote291f.woff" />
+    <Content Include="AdminSablon\vendors\summernote\dist\font\summernoted41d.eot" />
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Sablon\assets\img\person\person-f-7.webp" />
+    <Content Include="Sablon\assets\img\person\person-f-8.webp" />
+    <Content Include="Sablon\assets\img\person\person-f-9.webp" />
+    <Content Include="Sablon\assets\img\person\person-m-13.webp" />
+    <Content Include="Sablon\assets\img\person\person-m-7.webp" />
+    <Content Include="Sablon\assets\img\person\person-m-8.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-1.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-10.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-2.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-5.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-6.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-7.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-portrait-1.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-portrait-2.webp" />
+    <Content Include="Sablon\assets\img\portfolio\portfolio-portrait-4.webp" />
+    <Content Include="Sablon\assets\img\profile\profile-2.webp" />
+    <Content Include="Sablon\assets\img\profile\profile-square-2.webp" />
+    <Content Include="Sablon\assets\img\profile\profile-square-3.webp" />
+    <Content Include="Sablon\assets\img\services\services-1.webp" />
+    <Content Include="Sablon\assets\img\services\services-2.webp" />
+    <Content Include="Sablon\assets\img\services\services-3.webp" />
+    <Content Include="Sablon\assets\vendor\aos\aos.js.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Sablon\assets\vendor\bootstrap-icons\bootstrap-icons.scss" />
+    <Content Include="Sablon\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Sablon\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Sablon\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Sablon\assets\vendor\purecounter\purecounter_vanilla.js.map" />
+    <Content Include="Sablon\assets\vendor\swiper\swiper-bundle.min.js.map" />
+    <Content Include="Sablon\assets\vendor\typed.js\typed.cjs.map" />
+    <Content Include="Sablon\assets\vendor\typed.js\typed.module.js.map" />
+    <Content Include="Sablon\assets\vendor\typed.js\typed.umd.js.map" />
+    <Content Include="Sablon\forms\contact.php" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\hobiler\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51156</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44371/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebSite
+{
+    public partial class SertifikaGuncelle : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["KullaniciAdi"] == null)
+            {
+                Response.Redirect("Login");
+            }
+
+            int id= Convert.ToInt32(Request.QueryString["Id"]);
+            TxtId.Enabled = false;
+            TxtId.Text = id.ToString();
+
+            if(Page.IsPostBack==false)
+            {
+                DataSet1TableAdapters.SertifikalarTableAdapter dt= new DataSet1TableAdapters.SertifikalarTableAdapter();
+                TxtsertifikaAd.Text = dt.SertifikaGetir(Convert.ToInt32(id))[0].SertifikaAd;
+                TxtKurum.Text = dt.SertifikaGetir(Convert.ToInt32(id))[0].VerenKurum;
+                TxtTarih.Text = dt.SertifikaGetir(Convert.ToInt32(id))[0].Tarih;
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.SertifikalarTableAdapter dtGuncelle = new DataSet1TableAdapters.SertifikalarTableAdapter();
+            dtGuncelle.SertifikaGuncelle(TxtsertifikaAd.Text,TxtKurum.Text,TxtTarih.Text,Convert.ToInt32(TxtId.Text));
+            Response.Redirect("Sertifika");
+        }
+    }
+}
