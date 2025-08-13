@@ -86,7 +86,7 @@ namespace WebSite
 
                 return;
             }
-            //okvw jcwf qjkz ndeq
+        
             try
             {
                 MailMessage mailGonder = new MailMessage();
@@ -100,7 +100,7 @@ namespace WebSite
                 mailGonder.ReplyToList.Add(new MailAddress(mail));
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new NetworkCredential(adminMail, "okvwjcwfqjkzndeq");
+                smtp.Credentials = new NetworkCredential(adminMail, "uygulamasifreniz);
                 smtp.EnableSsl = true;
                 smtp.Send(mailGonder);
 
@@ -122,3 +122,4 @@ namespace WebSite
         }
     }
 }
+
